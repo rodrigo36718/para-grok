@@ -1,0 +1,34 @@
+<div class="login">
+    <div class="login-triangle"></div>
+
+    <h2 class="login-header">Modificar Novedad</h2>
+
+    <form action="/admin/novedades/modificar" method="post" enctype="multipart/form-data" class="login-container">
+        <input type="hidden" value="{{novedad.id}}" name="id">
+        <label for="">Título</label>
+        <p><input type="text" class="form-control" name="titulo" value="{{novedad.titulo}}"></p>
+
+        <Label for="">Subtítulo</Label>
+        <p><input type="text" class="form-control" name="subtitulo" value="{{novedad.subtitulo}}"></p>
+
+        <Label>Imagen:</Label>
+        <p><input type="file" name="imagen" id="imagen"></p>
+
+        <p><label>
+                Eliminar imagen actual?
+                <input type="checkbox" name="img_delete" id="img_delete" value="1">
+                 
+        </label></p>
+
+        <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+
+        <label for="">Cuerpo</label>
+        <p><textarea type="text" class="form-control" name="cuerpo">{{novedad.cuerpo}}</textarea></p>
+        <p><input type="submit" value="Modificar"></p>
+    </form>
+
+    {{#if error}}
+    <p>{{message}}</p>
+    {{/if}}
+
+</div>

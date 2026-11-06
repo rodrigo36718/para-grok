@@ -1,0 +1,17 @@
+<div class="login">
+    <div class="login-triangle"></div>
+
+    <h2 class="login-header">Agregar Novedades</h2>
+
+    <form action="/admin/novedades/agregar" method="post" enctype="multipart/form-data" class="login-container">
+        <p><input type="text" class="form-control" placeholder="Título" name="titulo"></p>
+        <p><textarea type="text" class="form-control" placeholder="Subtítulo" name="subtitulo"></textarea></p>
+        <p><label for="">Imagen: <input type="file" name="imagen" id="imagen"></label></p>
+        <p><textarea type="text" class="form-control" placeholder="Cuerpo" name="cuerpo"></textarea></p>
+        <p><input type="submit" value="Guardar"></p>
+    </form>
+    {{#if error}}
+    <p>{{message}}</p>
+    {{/if}}
+
+</div>
